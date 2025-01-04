@@ -1,0 +1,102 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+<body>
+    <div id="filters" >
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-solid fa-fire"></i></div>
+                    <p>Trending</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-solid fa-bed"></i></div>
+                    <p>Rooms</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-solid fa-city"></i></div>
+                    <p>Iconic Cities</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-solid fa-mountain"></i></div>
+                    <p>Mountains</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-solid fa-torii-gate"></i></div>
+                    <p>Castles</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Amazing Pools</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-solid fa-campground"></i></div>
+                    <p>Camping</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-solid fa-tractor"></i></div>
+                    <p>Farms</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="filter">
+                    <div><i class="fa-regular fa-snowflake"></i></div>
+                    <p>Arctic</p>
+                </div>
+            </div>
+        
+        <div id="tax-toggle">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% for (const listing of listings) { %>
+            <a href="/listings/<%= listing._id %>" class="listing_link">
+            <div class="card listing-card">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+                <div class="card-img-overlay">See in detail...</div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title %></b><br>
+                        <% if (typeof listing.price === "number" && !isNaN(listing.price)) { %>
+                            &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+                            <i class="tax-info">&nbsp; &nbsp;+18% GST</i>
+                        <% } else { %>
+                            <%= listing.price %>
+                        <% } %>
+                    </p>
+                </div>
+            </div>
+            </a>
+        <% } %>
+    </div>
+
+    <script>
+        let toggleSwitch = document.getElementById("flexSwitchCheckDefault");
+        let taxInfo = document.getElementsByClassName("tax-info");
+        toggleSwitch.addEventListener("click", () => {
+            for (const info of taxInfo) {
+                if (info.style.display != "inline") {
+                    info.style.display = "inline";
+                } else {
+                    info.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>

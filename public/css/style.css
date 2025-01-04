@@ -1,0 +1,186 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #FF385C;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links, .f-info-socials, .f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info {
+    text-align: center;
+    height: 5rem;
+    display: flex;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Cards */
+.listing-card {
+    border: none !important;
+    /* margin-left: 3rem; */
+    margin-bottom: 1rem !important;
+}
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body {
+    padding: 0 !important;
+}
+.card-text {
+    font-weight: 400 !important;
+}
+.listing_link {
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.3;
+    background-color: white;
+}
+
+.btn {
+    background-color: #FF385C !important;
+}
+
+/* Show Page */
+.show-img {
+    height: 50vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.edit-btn, .create {
+    color: white !important;
+}
+.delete-btn {
+    background-color: black !important;
+    margin-left: 1rem;
+}
+
+.r-btn {
+    background-color: white !important;
+}
+.r-btn:hover {
+    color: white !important;
+    background-color: black !important;
+}
+
+.r-delete {
+    background-color: black !important;
+    color: white !important;
+}
+
+/* Image in edit */
+.originalImage {
+    width: 300px;
+    height: 167px;
+    filter: blur(1px);
+}
+
+/* Map */
+#map {
+     height: 250px;
+     width: 560px;
+     border-radius: 15px;
+}
+
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+}
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.filter p {
+    font-size: 0.8rem;
+}
+
+#tax-toggle {
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 2.5rem;
+    padding: 1rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+ 
+.tax-info {
+    display: none;
+}
+
+.btn-search {
+    color: white !important;
+    border-radius: 25px !important;
+    padding: 0 1rem 0 1rem !important;
+}
+
+.search-inp {
+    border-radius: 25px !important;
+    margin-inline-start: 21rem;
+}
+
+.btn-search i {
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+/* Media queries */
+
