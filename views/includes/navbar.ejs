@@ -14,17 +14,44 @@
             <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
           </form>
         </div>
+        
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+          <a class="nav-link airbnb-home" href="/listings/new">Airbnb your home</a>
             <% if (!currUser) { %>
               <a class="nav-link" href="/signup"><b>SignUp</b></a>
               <a class="nav-link" href="/login"><b>LogIn</b></a>
             <% } %>
             
             <% if (currUser) { %>
-              <a class="nav-link" href="/logout"><b>LogOut</b></a>
+              <div class="navbar-nav ms-auto user-icon">
+                <div class="user" id="userIcon" onclick="toggleDropdown()">
+                  <i class="fa-solid fa-user" id="icon"></i>
+                  <p>User</p>
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                  <p><%= currUser.username %></p>
+                  <p><%= currUser.email %></p>
+                  <a class="nav-link" href="/logout"><b>LogOut</b></a>
+                </div>
+              </div>
             <% } %>
         </div>
       </div>
     </div>
   </nav>
+
+<script>
+  function toggleDropdown() {
+    const dropdown = document.getElementById('myDropdown');
+    dropdown.classList.toggle('show');
+  }
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', (e) => {
+    const userIcon = document.getElementById('userIcon');
+    const dropdown = document.getElementById('myDropdown');
+    if (!userIcon.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('show');
+    }
+  });
+</script>

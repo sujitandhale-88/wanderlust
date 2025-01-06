@@ -182,5 +182,51 @@ body {
     margin-right: 0.5rem;
 }
 
-/* Media queries */
+/* user - navbar */
+.login {
+    margin-left: 16rem;
+    margin-top: 1rem;
+}
+.user-icon {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.user {
+    text-align: center;
+}
 
+.user:hover {
+    cursor: pointer;
+}
+
+.user-icon {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    margin-top: 8rem;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .dropdown-content p {
+    margin: 0;
+  }
+
+  
+  .show {
+    display: block;
+  }
+
+  .user {
+    padding-left: 1rem;
+  }
+   
